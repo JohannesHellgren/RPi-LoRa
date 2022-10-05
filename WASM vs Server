@@ -1,0 +1,25 @@
+Blazor is an Single Page Application (SPA) built on the .NET framework, with this we can build web apps in C# instead of JS
+Our Blazor app is using "WebAssembly" technology which simply allows us to run a high level programming language on the client side in the browser, allegedly on native spped
+.razor components = self contained chunks UI (pages, forms, etc.)
+
+Client side hosting: (client workload)
++ No need for a server side, can be launched as static page
++ No need for JavaScript
++ Offline support and PWA
+
+- Big download size (when loading in the browser)
+- Requires WebAssembly (IE11 does not support this)
+- Cannot use .NET Core, only .NET standard
+- Your DLLs are downloaded to the client (the frontend code can be reverse-engineered, do not store anything confidential)
+
+Server side hosting: (server workload)
++ No need for JavaScript
++ Small size, fast loading
++ Can use .NET Core
++ Runs on any browser, does not use WebAssembly
++ Your code stays on the server
+
+- You need a server-side
+- No offline support, the second the server is offline, the user cannot use the application
+- Higher latency, worse UX. Every action is handled in real time on the server via signalR
+- Hard to maintain and scale due to the signalR connection
