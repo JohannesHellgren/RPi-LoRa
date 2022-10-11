@@ -37,6 +37,7 @@ namespace Webserver.Services
             var weatherObj = _weatherTable.Find(x=>x.Id == weather.Id).FirstOrDefault();
 
             if (weatherObj == null) {
+                weather.timestamp = DateTime.UtcNow;
                 _weatherTable.InsertOne(weather);
             }
             else {

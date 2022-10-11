@@ -3,24 +3,23 @@
 @inject Webserver.Services.IWeatherService weatherService
 
 <PageTitle>Index</PageTitle>
-<!--
 
 <div class="row">
     <div class="col-md-4">
         <div class="row">
             <div class="col-md-4">
-                <label> Name :</label>
+                <label> Temperature :</label>
             </div>
             <div class="col-md-8">
-                <input @bind="Temperature" style="width:100%;" placeholder="Temperature" />
+                <input @bind="WeatherPoint.temperature" style="width:100%;" placeholder="Temperature" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label> Name :</label>
+                <label> Humidity :</label>
             </div>
             <div class="col-md-8">
-                <input @bind="Humidity" style="width:100%;" placeholder="Humidity" />
+                <input @bind="WeatherPoint.humidity" style="width:100%;" placeholder="Humidity" />
             </div>
         </div>
         <div class="row">
@@ -47,10 +46,10 @@
                     @foreach (var w in Weather)
                     {
                         <tr>
-                            <td>w.Id</td>
-                            <td>w.Timestamp</td>
-                            <td>w.Temperature</td>
-                            <td>w.Humidity</td>
+                            <td>@w.Id</td>
+                            <td>@w.timestamp</td>
+                            <td>@w.temperature</td>
+                            <td>@w.humidity</td>
                             <td>
                                 <button class="btn btn-primary" @onclick="(e => Edit(w.Id))">Edit</button>
                                 <button class="btn btn-danger" @onclick="(e => Delete(w.Id))">Delete</button>
@@ -63,7 +62,6 @@
     </div>
 </div>
 
--->
 
 @code{
     Weather WeatherPoint = new Weather();

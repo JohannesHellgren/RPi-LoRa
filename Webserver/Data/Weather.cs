@@ -9,10 +9,10 @@ namespace Webserver.Data
 
         public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
 
-        public DateTime Timestamp { get; set; }
+        public BsonDateTime timestamp { get; set; }
 
-        public string Temperature { get; set; }
+        public int temperature { get; set; }
 
-        public string Humidity { get; set; }
+        public int humidity { get; set; }
     }
 }
